@@ -1,7 +1,7 @@
 ansible-hacker-playbook
 =======================
 
-An ansible playbook that sets up a tricked-out zsh & vim environment.
+An [ansible](http://ansible.cc) playbook that sets up a tricked-out [zsh](http://zsh.org) & [vim](http://vim.org) environment.
 
 Features
 --------
