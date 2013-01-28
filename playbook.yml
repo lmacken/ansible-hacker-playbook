@@ -14,7 +14,11 @@
     sudo: False
 
   - name: Installing zsh, vim, and git
-    action: yum pkg=zsh,vim-enhanced,git state=latest
+    action: yum pkg=$item state=latest
+    with_items:
+    - zsh
+    - vim-enhanced
+    - git
 
   - name: Changing the default shell to zsh
     action: user shell=/bin/zsh user=${whoami.stdout}
