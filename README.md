@@ -6,8 +6,8 @@ An ansible playbook that sets up a tricked-out zsh & vim environment.
 Features
 --------
 
-- Installs (oh-my-zsh)[https://github.com/robbyrussel/oh-my-zsh], A community-driven framework for managing your zsh configuration.
-- Installs (spf13-vim)[https://vim.spf13.com], "The Ultimate Vim Distribution"
+- Installs [oh-my-zsh](https://github.com/robbyrussel/oh-my-zsh), A community-driven framework for managing your zsh configuration.
+- Installs [spf13-vim](https://vim.spf13.com), "The Ultimate Vim Distribution"
 
 Running
 -------
