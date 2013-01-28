@@ -6,7 +6,7 @@ An [ansible](http://ansible.cc) playbook that sets up a tricked-out [zsh](http:/
 Features
 --------
 
-- Installs [oh-my-zsh](https://github.com/robbyrussel/oh-my-zsh), A community-driven framework for managing your zsh configuration.
+- Installs [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), A community-driven framework for managing your zsh configuration.
 - Installs [spf13-vim](http://vim.spf13.com), "The Ultimate Vim Distribution"
 
 Running
