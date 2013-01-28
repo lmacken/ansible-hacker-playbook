@@ -1,0 +1,38 @@
+# An ansible playbook that sets up a tricked-out zsh & vim environment
+#
+# Author: Luke Macken <lmacken@redhat.com>
+---
+
+- name: Bootstrapping developer environment
+  hosts: all
+
+  tasks:
+
+  - name: Determining username
+    action: shell whoami
+    register: whoami
+    sudo: False
+
+  - name: Installing zsh, vim, and git
+    action: yum pkg=zsh,vim-enhanced,git state=latest
+
+  - name: Changing the default shell to zsh
+    action: user shell=/bin/zsh user=${whoami.stdout}
+
+- name: Entering Plugin Nirvana
+  hosts: all
+  sudo: False
+
+  tasks:
+
+  - name: Backing up existing ~/.zshrc
+    action: shell if [ -f ~/.zshrc ]; then mv ~/.zshrc{,.orig}; fi
+
+  - name: Installing oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
+    action: git repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
+
+  - name: Creating new ~/.zshrc
+    action: shell cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+  - name: Installing spf13-vim, The Ultimate Vim Distribution (http://vim.spf13.com)
+    action: shell curl http://j.mp/spf13-vim3 -L -o - | sh
