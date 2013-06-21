@@ -20,6 +20,7 @@
     - vim-enhanced
     - git
     - tmux
+    - htop
 
   - name: Changing the default shell to zsh
     action: user shell=/bin/zsh user=${whoami.stdout}
