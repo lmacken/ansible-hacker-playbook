@@ -1,4 +1,4 @@
-# An ansible playbook that sets up a tricked-out zsh & vim environment
+# An ansible playbook that sets up a tricked-out vim/zsh/tmux environment
 #
 # Author: Luke Macken <lmacken@redhat.com>
 ---
@@ -13,12 +13,13 @@
     register: whoami
     sudo: False
 
-  - name: Installing zsh, vim, and git
+  - name: Installing zsh, vim, git, tmux, etc.
     action: yum pkg=$item state=latest
     with_items:
     - zsh
     - vim-enhanced
     - git
+    - tmux
 
   - name: Changing the default shell to zsh
     action: user shell=/bin/zsh user=${whoami.stdout}
